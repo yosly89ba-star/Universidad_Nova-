@@ -1,0 +1,22 @@
+actor,tipo,relacion_con_los_datos,responsabilidades,nivel_de_acceso
+Rectoría,Interno,Patrocinador y decisor,"Aprueba política de datos, asigna recursos, recibe indicadores únicos",Dashboard ejecutivo (agregados)
+Dirección administrativa,Interno,Propietario de datos administrativos y financieros,"Define reglas de calidad financiera, aprueba accesos de su área",Agregados; detalle financiero justificado
+Dirección académica,Interno,Propietario del dominio académico,"Valida definiciones (aprobado, periodo), catálogo de programas",Académico detallado sin PII
+Oficina de tecnología,Interno,Custodio técnico,"Opera plataforma, respaldos, ETL, disponibilidad",Técnico (sin lectura de contenido sensible)
+Oficina jurídica,Interno,Cumplimiento normativo,"Contratos con encargados, base legal del tratamiento, retención",Consulta de catálogo y auditoría
+Oficina de seguridad de la información,Interno,Control de acceso y riesgo,"Clasifica datos, gestiona roles y revisa auditoría, responde a incidentes",Auditoría y PII bajo justificación
+Recursos humanos,Interno,Propietario de datos del personal,"Calidad de datos del personal, minimiza salarios en analítica",Datos de personal
+Registro académico,Interno,Data steward estudiantil,"Resuelve duplicados, mantiene registro dorado, corrige notas",PII estudiantil (necesidad operativa)
+Finanzas,Interno,Propietario financiero,"Calidad de pagos y mora, corrige errores de digitación",Financiero detallado
+Bienestar universitario,Interno,Propietario de datos sensibles,"Registra y protege atenciones, define uso permitido",Acceso exclusivo a su dominio
+Docentes,Interno,Productores y consumidores,"Registran notas y asistencia, consultan sus cursos",Solo sus cursos
+Estudiantes,Interno,Titulares de los datos,"Veracidad de sus datos, ejercicio de derechos (acceso, rectificación)",Solo sus propios datos
+Analistas de datos,Interno,Consumidores analíticos,"Construyen indicadores y modelos con datos seudonimizados",Vista v_mart_desempeno (sin PII)
+Administradores de bases de datos,Interno,Custodios operativos,"Respaldos, rendimiento, permisos; no usan datos para análisis",Administración técnica con auditoría
+Desarrolladores,Interno,Constructores de ETL y apps,"Versionan en Git, prueban con datos simulados, no usan producción",Entornos de desarrollo
+Proveedores tecnológicos,Externo,Suministran software e infraestructura,"Cumplir contrato y confidencialidad",Mínimo contractual
+Plataformas educativas,Externo,Alojan datos del LMS,"Entregan logs vía API, cumplen acuerdo de tratamiento",Solo datos de actividad
+Proveedores de nube,Externo,Alojan almacenamiento y cómputo,"Cifrado, disponibilidad, ubicación de datos",Infraestructura (datos cifrados)
+Entidades regulatorias,Externo,Supervisan cumplimiento,"Solicitan reportes e inspeccionan",Reportes oficiales
+Auditores,Externo,Verifican controles,"Revisan trazabilidad y cumplimiento",Solo lectura (auditoría y catálogo)
+Empresas que procesan por encargo,Externo,Encargados del tratamiento,"Procesan solo bajo contrato y con instrucciones",Datos específicos del encargo
