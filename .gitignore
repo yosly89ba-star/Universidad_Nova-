@@ -4,3 +4,7 @@ data.R
 .Rproj.user/
 .RData
 .env
+
+derby.log
+metastore_db/
+spark-warehouse/

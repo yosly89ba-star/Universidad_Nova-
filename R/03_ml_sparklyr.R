@@ -50,7 +50,11 @@ print(metricas); write_csv(metricas, file.path(DIR_DOCS, "metricas_ml.csv"))
 
 # Importancia de variables del Random Forest
 rf_stage <- ml_stages(m_rf)[[length(ml_stages(m_rf))]]
-imp <- ml_feature_importances(rf_stage)   # columnas: feature, importance
+imp_vec <- as.numeric(invoke(invoke(spark_jobj(rf_stage), "featureImportances"), "toArray"))
+nombres <- c(num, paste0("categoria_", seq_len(length(imp_vec) - length(num))))
+imp <- data.frame(variable = nombres, importancia = imp_vec)
+imp <- imp[order(-imp$importancia), ]
+print(head(imp, 10))
 write_csv(imp, file.path(DIR_DOCS, "importancia_variables.csv"))
 
 # ---- Agrupación K-Means (perfiles)
